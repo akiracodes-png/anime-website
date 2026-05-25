@@ -20,7 +20,6 @@
     }
 
     nav{
-
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -41,19 +40,19 @@
     .nav-links a{
       color:white;
       text-decoration:none;
+
       margin-left:25px;
+
       font-size:18px;
     }
 
     .hero{
-
-      padding:80px 40px;
-
       text-align:center;
+
+      padding:80px 20px;
     }
 
     .hero h1{
-
       font-size:65px;
 
       color:cyan;
@@ -65,7 +64,9 @@
 
     .hero p{
       margin-top:15px;
+
       font-size:20px;
+
       color:#d1d5db;
     }
 
@@ -83,26 +84,30 @@
 
       border-radius:15px;
 
-      font-size:18px;
-
       background:#111827;
 
       color:white;
 
-      outline:none;
+      font-size:18px;
 
       border:2px solid cyan;
+
+      outline:none;
     }
 
     .featured-anime{
 
       display:flex;
 
-      gap:30px;
+      align-items:center;
+
+      justify-content:center;
+
+      gap:40px;
+
+      flex-wrap:wrap;
 
       padding:50px;
-
-      align-items:center;
     }
 
     .featured-anime img{
@@ -188,9 +193,9 @@
 
       color:cyan;
 
-      margin-bottom:30px;
-
       font-size:40px;
+
+      margin-bottom:30px;
     }
 
     .cards{
@@ -243,9 +248,9 @@
 
       color:cyan;
 
-      margin-bottom:25px;
-
       font-size:40px;
+
+      margin-bottom:25px;
     }
 
     .news{
@@ -292,12 +297,12 @@
 
     <div class="search-box">
 
-<input
-type="text"
-id="animeSearch"
-placeholder="Search anime like Bleach TYBW..."
-onkeyup="searchAnime()"
->
+      <input
+      type="text"
+      id="animeSearch"
+      placeholder="Search anime like Bleach TYBW..."
+      onkeyup="searchAnime()"
+      >
 
     </div>
 
@@ -305,11 +310,16 @@ onkeyup="searchAnime()"
 
   <section class="featured-anime">
 
-    <img src="https://wallpapercave.com/wp/wp9424537.jpg">
+    <img
+    id="animeImage"
+    src="https://wallpapercave.com/wp/wp9424537.jpg"
+    >
 
     <div class="anime-info">
 
-      <h2>Bleach TYBW</h2>
+      <h2 id="animeTitle">
+        Bleach TYBW
+      </h2>
 
       <div class="tags">
 
@@ -319,7 +329,10 @@ onkeyup="searchAnime()"
 
       </div>
 
-      <p class="description">
+      <p
+      class="description"
+      id="animeDescription"
+      >
 
         Ichigo Kurosaki returns for the final war against Yhwach and the Quincy army in the Thousand-Year Blood War arc.
 
@@ -392,62 +405,65 @@ onkeyup="searchAnime()"
     </div>
 
   </section>
-<script>
 
-function searchAnime(){
+  <script>
 
-  let input =
-  document.getElementById("animeSearch")
-  .value
-  .toLowerCase();
+    function searchAnime(){
 
-  let title =
-  document.querySelector(".anime-info h2");
+      let input =
+      document.getElementById("animeSearch")
+      .value
+      .toLowerCase();
 
-  let description =
-  document.querySelector(".description");
+      let title =
+      document.getElementById("animeTitle");
 
-  let image =
-  document.querySelector(".featured-anime img");
+      let description =
+      document.getElementById("animeDescription");
 
-  if(input.includes("bleach")){
+      let image =
+      document.getElementById("animeImage");
 
-    title.innerHTML = "Bleach TYBW";
+      if(input.includes("bleach")){
 
-    description.innerHTML =
-    "Ichigo Kurosaki returns for the final war against Yhwach and the Quincy army.";
+        title.innerHTML =
+        "Bleach TYBW";
 
-    image.src =
-    "https://wallpapercave.com/wp/wp9424537.jpg";
-  }
+        description.innerHTML =
+        "Ichigo Kurosaki returns for the final war against Yhwach and the Quincy army.";
 
-  else if(input.includes("demon")){
+        image.src =
+        "https://wallpapercave.com/wp/wp9424537.jpg";
+      }
 
-    title.innerHTML =
-    "Demon Slayer";
+      else if(input.includes("demon")){
 
-    description.innerHTML =
-    "Tanjiro Kamado fights demons to save humanity and his sister Nezuko.";
+        title.innerHTML =
+        "Demon Slayer";
 
-    image.src =
-    "https://wallpapercave.com/wp/wp8387587.jpg";
-  }
+        description.innerHTML =
+        "Tanjiro Kamado fights demons to save humanity and his sister Nezuko.";
 
-  else if(input.includes("blue")){
+        image.src =
+        "https://wallpapercave.com/wp/wp8387587.jpg";
+      }
 
-    title.innerHTML =
-    "Blue Lock";
+      else if(input.includes("blue")){
 
-    description.innerHTML =
-    "Japan creates the ultimate striker project called Blue Lock.";
+        title.innerHTML =
+        "Blue Lock";
 
-    image.src =
-    "https://wallpapercave.com/wp/wp12304044.jpg";
-  }
+        description.innerHTML =
+        "Japan creates the ultimate striker project called Blue Lock.";
 
-}
+        image.src =
+        "https://wallpapercave.com/wp/wp12304044.jpg";
+      }
 
-</script>
+    }
+
+  </script>
+
 </body>
 
 </html>
