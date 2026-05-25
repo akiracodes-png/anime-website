@@ -292,10 +292,12 @@
 
     <div class="search-box">
 
-      <input
-      type="text"
-      placeholder="Search anime like Bleach TYBW..."
-      >
+<input
+type="text"
+id="animeSearch"
+placeholder="Search anime like Bleach TYBW..."
+onkeyup="searchAnime()"
+>
 
     </div>
 
@@ -390,7 +392,62 @@
     </div>
 
   </section>
+<script>
 
+function searchAnime(){
+
+  let input =
+  document.getElementById("animeSearch")
+  .value
+  .toLowerCase();
+
+  let title =
+  document.querySelector(".anime-info h2");
+
+  let description =
+  document.querySelector(".description");
+
+  let image =
+  document.querySelector(".featured-anime img");
+
+  if(input.includes("bleach")){
+
+    title.innerHTML = "Bleach TYBW";
+
+    description.innerHTML =
+    "Ichigo Kurosaki returns for the final war against Yhwach and the Quincy army.";
+
+    image.src =
+    "https://wallpapercave.com/wp/wp9424537.jpg";
+  }
+
+  else if(input.includes("demon")){
+
+    title.innerHTML =
+    "Demon Slayer";
+
+    description.innerHTML =
+    "Tanjiro Kamado fights demons to save humanity and his sister Nezuko.";
+
+    image.src =
+    "https://wallpapercave.com/wp/wp8387587.jpg";
+  }
+
+  else if(input.includes("blue")){
+
+    title.innerHTML =
+    "Blue Lock";
+
+    description.innerHTML =
+    "Japan creates the ultimate striker project called Blue Lock.";
+
+    image.src =
+    "https://wallpapercave.com/wp/wp12304044.jpg";
+  }
+
+}
+
+</script>
 </body>
 
 </html>
